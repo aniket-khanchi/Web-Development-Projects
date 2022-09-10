@@ -1,0 +1,63 @@
+body{
+    background-color:black;
+    
+}
+
+header{
+    width:20%;
+    font-family: cursive;
+    float: left;
+    background-image: url("/images/pexels-pixabay-270348.jpg") no repeat center center fixed;
+}
+
+nav{
+    width:75%;
+    height: 25%;
+    float: right;
+    margin: 20em 4em 0 0;
+ 
+}
+
+main{
+    clear: right;
+    background-color: rgb(220, 242, 248);
+    background-image: url("\images\pexels-nataliya-vaitkevich-6120212.jpg");
+    padding: 2%;
+    font-size: 1.5em;
+
+}
+
+nav ul{
+    list-style-type: none;
+    margin:0;
+    text-align: right;
+}
+
+nav ul li{
+    display: inline-block;
+    font-size: 1.75em;
+}
+
+nav ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1em 1em 0.5em 1em;
+    text-decoration: none;
+}
+
+footer p{
+    font-size: 1em;
+    text-align: center;
+    color:rgb(160, 27, 27);
+    padding: 0 1em;
+}
+
+
+footer p a{
+    color: rgb(133, 19, 19);
+    text-decoration:double;
+}
+#image1{
+    height: 6%;
+}
