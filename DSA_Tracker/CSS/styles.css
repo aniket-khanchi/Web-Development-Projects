@@ -32,6 +32,7 @@ main{
 
 }
 
+
 nav ul{
     list-style-type: none;
     margin:0;
@@ -72,3 +73,21 @@ footer p a{
 #image1{
     height: 6%;
 }
+
+.grid-container{
+display: grid;
+grid-template-columns: 50% 50% ;  /* it specify the size of each column */
+}
+
+.grid-item{
+    display: inline-block;
+   
+
+}
+
+table, th ,td{
+    border: 1px solid black;
+    padding: 1em;
+}
+
+
