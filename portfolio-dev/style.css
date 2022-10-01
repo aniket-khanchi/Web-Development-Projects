@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+p{
+    color: white;
+}
+header{
+    display: inline-block;
+    width: 100%;
+}
+nav{
+    display:inline-block;
+    width: 80%;
+    float: right;
+    text-align: right;
+    color: aliceblue;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 11px;
+    border: 3px solid;
+    border-radius: 9px;
+    margin: 5px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+}
+#header-container{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(/portfolio-dev/To%20Use.jpeg);
+    background-size: cover;
+    
+    
+    background-position: center;
+    /* background-size: inherit; */
+    height: 652px;
+    position: relative;
+}
+#headback{
+    width: 100%;
+    position: absolute;
+}
+#logo{
+    border-radius: 100px;
+    margin: 5px;
+}
+#intro{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+#intro span{
+    font-size: 50px;
+    
+}
+#flex_about{
+    display:flex;
+
+}
+#flex_about div{
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width:30%;
+}
+#about_me{
+    background:white;
+}
+
+
+
+p{
+    color: black;
+}
+footer{
+    text-align: center;     
+    background:black;
+}
