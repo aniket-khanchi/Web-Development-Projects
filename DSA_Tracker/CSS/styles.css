@@ -1,7 +1,9 @@
 body{
     background-color: black;
 }
-
+p,h2{
+  color: white;
+}
 header{
     width:20%;
     font-family: cursive;
