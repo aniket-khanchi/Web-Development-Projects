@@ -109,7 +109,8 @@ table, th ,td{
   }
 progress{
     width: 45%;
-    margin: 1em;
+    height: 2rem;
+    margin: 1vh 0vh 0vh 2vh;
 }
 .topic{
     width: 50%;
@@ -119,6 +120,12 @@ progress{
     background-color: #ccc; 
     color: black;
     font-size: large;
+  }
+  .active, .accordion:hover p{
+    color: black;
+  }
+  .active, .accordion:hover progress{
+    margin: 1.6vh 0vh 0vh 2vh;
   }
   
   .panel {
@@ -155,6 +162,8 @@ progress{
   .progress {
     width: 100%;
     background-color: grey;
+    
+    
   }
   
   #myBar {
