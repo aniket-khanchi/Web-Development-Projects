@@ -335,7 +335,11 @@
                 </tr>
             </table>
                 </div>
-                <button class="accordion">Matrix</button>
+                <button class="accordion">
+                    <p class ='topic'>Matrix</p>
+                    <p id="matrix_count" >(0/10)</p>
+                    <progress id="matrix_bar" max="100"></progress>
+                    </button>
                 <div class="panel">
                 <table class = "conta">
                     <tr>
@@ -346,7 +350,7 @@
                         <th>Difficulty level</th>
                     </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://practice.geeksforgeeks.org/problems/spirally-traversing-a-matrix/0
                             target='_blank'>Spiral traversal on a Matrix</a></td>
                     <td><input type='button' value=''></td>
@@ -354,7 +358,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://leetcode.com/problems/search-a-2d-matrix/ target='_blank'>Search an element in a
                             matriix</a></td>
                     <td><input type='button' value=''></td>
@@ -362,7 +366,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://practice.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1
                             target='_blank'>Find median in a row wise sorted matrix</a></td>
                     <td><input type='button' value=''></td>
@@ -370,7 +374,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1 target='_blank'>Find
                             row with maximum no. of 1's</a></td>
                     <td><input type='button' value=''></td>
@@ -378,7 +382,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://practice.geeksforgeeks.org/problems/sorted-matrix/0 target='_blank'>Print
                             elements in sorted order using row-column wise sorted matrix</a></td>
                     <td><input type='button' value=''></td>
@@ -386,7 +390,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://practice.geeksforgeeks.org/problems/max-rectangle/1 target='_blank'>Maximum size
                             rectangle</a></td>
                     <td><input type='button' value=''></td>
@@ -394,7 +398,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://www.geeksforgeeks.org/find-a-specific-pair-in-matrix/ target='_blank'>Find a
                             specific pair in matrix</a></td>
                     <td><input type='button' value=''></td>
@@ -402,7 +406,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://www.geeksforgeeks.org/rotate-a-matrix-by-90-degree-in-clockwise-direction-without-using-any-extra-space/
                             target='_blank'>Rotate matrix by 90 degrees</a></td>
                     <td><input type='button' value=''></td>
@@ -410,7 +414,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1 target='_blank'>Kth
                             smallest element in a row-cpumn wise sorted matrix</a></td>
                     <td><input type='button' value=''></td>
@@ -418,7 +422,7 @@
                     <td><input type='button' value=''></td>
                 </tr>
                 <tr>
-                    <td><input type='checkbox'></td>
+                    <td><input class="matrix_checkbox" type='checkbox'></td>
                     <td><a href=https://www.geeksforgeeks.org/common-elements-in-all-rows-of-a-given-matrix/
                             target='_blank'>Common elements in all rows of a given matrix</a></td>
                     <td><input type='button' value=''></td>
@@ -3807,6 +3811,8 @@
     </div>
 
     <script>
+
+        // This function is for show/hide accordion
         var acc = document.getElementsByClassName("accordion");
         var i;
         
@@ -3821,7 +3827,29 @@
             }
           });
         } ;
-     
+        // end 
+        var matrix_check_box = document.getElementsByClassName("matrix_checkbox");
+        var matrix_len = 0 ;
+        for (i = 0; i < matrix_check_box.length; i++) {
+            matrix_check_box[i].addEventListener("click", function() {
+                if(this.checked){
+                    // it is checked. Do something
+                    matrix_len +=1 ;
+                    var matrix_prog = document.getElementById("matrix_bar") ;
+                    var matrix_ac = document.getElementById("matrix_count") ;
+                    matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
+                    matrix_prog.setAttribute("value",matrix_len);
+                    matrix_prog.setAttribute("max",matrix_check_box.length);
+                }else{
+                    // it isn't checked. Do something else
+                    matrix_len -=1 ;
+                    var matrix_prog = document.getElementById("matrix_bar") ;
+                    var matrix_ac = document.getElementById("matrix_count") ;
+                    matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
+                    matrix_prog.setAttribute("value",matrix_len);
+                    matrix_prog.setAttribute("max",matrix_check_box.length);
+                }})} ;
+
         var check_box = document.getElementsByClassName("array_checkbox");
         var len = 0 ;
         for (i = 0; i < check_box.length; i++) {
@@ -3833,6 +3861,7 @@
                     var ac = document.getElementById("array_count") ;
                     ac.innerText = "("+ len+"/"+check_box.length+")" ;
                     prog.setAttribute("value",len);
+                    prog.setAttribute("max",check_box.length);
                     
                 }
                 else{
@@ -3842,6 +3871,7 @@
                     var ac = document.getElementById("array_count") ;
                     ac.innerText = "("+ len+"/"+check_box.length+")" ;
                     prog.setAttribute("value",len);
+                    prog.setAttribute("max",check_box.length);
                 }   
           });
         } ;
@@ -3851,6 +3881,12 @@
                     var ac = document.getElementById("array_count") ;
                     ac.innerText = "("+ len+"/"+check_box.length+")" ;
                     prog.setAttribute("value",len);
+
+                    var matrix_prog = document.getElementById("matrix_bar") ;
+                    var matrix_ac = document.getElementById("matrix_count") ;
+                    matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
+                    matrix_prog.setAttribute("value",matrix_len);
+                    
         });
         
         
