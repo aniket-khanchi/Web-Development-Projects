@@ -34,7 +34,7 @@
                     <p id="array_count" >(0/10)</p>
                     <progress id="array_bar" max="100"></progress>
                 </button>
-                <div class="panel">
+                <div id ='array_div' class="panel">
             <table class = "conta">
                 <tr>
                     <th>Checkbox</th>
@@ -340,7 +340,7 @@
                     <p id="matrix_count" >(0/10)</p>
                     <progress id="matrix_bar" max="100"></progress>
                     </button>
-                <div class="panel">
+                <div id ='matrix_div' class="panel">
                 <table class = "conta">
                     <tr>
                         <th>Checkbox</th>
@@ -431,8 +431,12 @@
                 </tr>
                 </table>
                 </div>
-                <button class="accordion">String</button>
-                <div class="panel">
+                <button class="accordion">
+                    <p class ='topic'>String</p>
+                    <p id="string_count" >(0/10)</p>
+                    <progress id="string_bar" max="100"></progress>
+                </button>
+                <div id ='string_div' class="panel">
                 <table class = "conta">
                     <tr>
                         <th>Checkbox</th>
@@ -788,8 +792,12 @@
                 </tr>
                 </table>
                 </div>
-                <button class="accordion">Searching & Sorting</button>
-                <div class="panel">
+                <button class="accordion">
+                    <p class ='topic'>Searching & Sorting</p>
+                    <p id="sands_count" >(0/10)</p>
+                    <progress id="sands_bar" max="100"></progress>
+                    </button>
+                <div id = 'sands_div' class="panel">
                 <table class = "conta">
                     <tr>
                         <th>Checkbox</th>
@@ -1084,8 +1092,12 @@
                 </tr>
                 </table>
                 </div>
-                <button class="accordion">LinkedList</button>
-                <div class="panel">
+                <button class="accordion">
+                    <p class ='topic'>LinkedList</p>
+                    <p id="LinkedList_count" >(0/10)</p>
+                    <progress id="LinkedList_bar" max="100"></progress>
+                    </button>
+                <div id = 'LinkedList_div' class="panel">
                 <table class = "conta">
                     <tr>
                         <th>Checkbox</th>
@@ -1663,7 +1675,6 @@
                 </tr>
                 </table>
                 </div>
-
                 <button class="accordion">Binary Search Trees</button>
                 <div class="panel">
                 <table class = "conta">
@@ -3828,65 +3839,222 @@
           });
         } ;
         // end 
-        var matrix_check_box = document.getElementsByClassName("matrix_checkbox");
-        var matrix_len = 0 ;
-        for (i = 0; i < matrix_check_box.length; i++) {
-            matrix_check_box[i].addEventListener("click", function() {
-                if(this.checked){
-                    // it is checked. Do something
-                    matrix_len +=1 ;
-                    var matrix_prog = document.getElementById("matrix_bar") ;
-                    var matrix_ac = document.getElementById("matrix_count") ;
-                    matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
-                    matrix_prog.setAttribute("value",matrix_len);
-                    matrix_prog.setAttribute("max",matrix_check_box.length);
-                }else{
-                    // it isn't checked. Do something else
-                    matrix_len -=1 ;
-                    var matrix_prog = document.getElementById("matrix_bar") ;
-                    var matrix_ac = document.getElementById("matrix_count") ;
-                    matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
-                    matrix_prog.setAttribute("value",matrix_len);
-                    matrix_prog.setAttribute("max",matrix_check_box.length);
-                }})} ;
+        // var string_cont = document.querySelector('#string_div');
+        // var string_checkbox = string_cont.querySelectorAll('input[type ="checkbox"]');
+        // var srting_len = 0 ;
+        // for (i = 0; i < string_checkbox.length; i++) {
+        //     string_checkbox[i].addEventListener("click", function() {
+        //         if(this.checked){
+        //             // it is checked. Do something
+        //             srting_len +=1 ;
+        //             var string_prog = document.getElementById("string_bar") ;
+        //             var string_ac = document.getElementById("string_count") ;
+        //             string_ac.innerText = "("+ srting_len+"/"+string_checkbox.length+")" ;
+        //             string_prog.setAttribute("value",srting_len);
+        //             string_prog.setAttribute("max",string_checkbox.length);
+                    
+        //         }
+        //         else{
+        //             // it isn't checked. Do something else
+        //             srting_len -=1 ;
+        //             var string_prog = document.getElementById("string_bar") ;
+        //             var string_ac = document.getElementById("string_count") ;
+        //             string_ac.innerText = "("+ srting_len+"/"+string_checkbox.length+")" ;
+        //             string_prog.setAttribute("value",srting_len);
+        //             string_prog.setAttribute("max",string_checkbox.length);
+        //         }   
+        //   });
+        // } ;
 
-        var check_box = document.getElementsByClassName("array_checkbox");
-        var len = 0 ;
-        for (i = 0; i < check_box.length; i++) {
-            check_box[i].addEventListener("click", function() {
+        // var panel_div = document.querySelectorAll('.panel');
+        // for (i = 0; i < panel_div.length; i++) {
+        // if  (panel_div[i].id == ''){ alert('emppty'); 
+        //                             break;};
+        // var cont = document.querySelector('#'+panel_div[i].id);
+        // var cont_checkbox = cont.querySelectorAll('input[type ="checkbox"]');
+        // var len = 0 ;
+        // for (j = 0; j < cont_checkbox.length; j++) {
+        //     cont_checkbox[j].addEventListener("click",function(){
+        //         if(this.checked){
+        //          // it is checked. Do something
+        //          var pop = this.parentElement.parentElement.parentElement.parentElement.parentElement.id;
+        //          alert(pop);
+		// 			len +=1 ;
+		// 			var prog = document.getElementById(pop.slice(0,-3) + 'bar') ;
+		// 			var ac = document.getElementById(pop.slice(0,-3) + 'count') ;
+		// 			ac.innerText = "("+ len+"/"+cont_checkbox.length+")" ;
+		//  		prog.setAttribute("value",len);
+		// 			prog.setAttribute("max",cont_checkbox.length); 
+        //          alert('checked');
+                    
+        //         }
+        //         else{
+        //          // it isn't checked. Do something else
+		// 			var pop = this.parentElement.parentElement.parentElement.parentElement.parentElement.id;
+        //          alert(pop);
+		// 			len -=1 ;
+		// 			var prog = document.getElementById(pop.slice(0,-3) + 'bar') ;
+		// 			var ac = document.getElementById(pop.slice(0,-3) + 'count') ;
+		// 			ac.innerText = "("+ len+"/"+cont_checkbox.length+")" ;
+		//  		prog.setAttribute("value",len);
+		// 			prog.setAttribute("max",cont_checkbox.length); 
+        //          alert('un-checked');}
+        //         })
+        //     };
+        // };
+        var prac_div = document.querySelector('.prac');
+        var cont_checkbox = prac_div.querySelectorAll('input[type ="checkbox"]');
+        var len ;
+        for (j = 0; j < cont_checkbox.length; j++) {
+            cont_checkbox[j].addEventListener("click",function(){
                 if(this.checked){
                     // it is checked. Do something
-                    len +=1 ;
-                    var prog = document.getElementById("array_bar") ;
-                    var ac = document.getElementById("array_count") ;
-                    ac.innerText = "("+ len+"/"+check_box.length+")" ;
-                    prog.setAttribute("value",len);
-                    prog.setAttribute("max",check_box.length);
+                    var pop = this.parentElement.parentElement.parentElement.parentElement.parentElement.id;
+                    cont = document.getElementById(pop);
+                    len_checkbox = cont.querySelectorAll('input[type ="checkbox"]');
+					len = cont.querySelectorAll('input[type ="checkbox"]:checked');
+					var prog = document.getElementById(pop.slice(0,-3) + 'bar') ;
+					var ac = document.getElementById(pop.slice(0,-3) + 'count') ;
+					ac.innerText = "("+ len.length+"/"+len_checkbox.length+")" ;
+		 			prog.setAttribute("value",len.length);
+					prog.setAttribute("max",len_checkbox.length); 
                     
                 }
                 else{
                     // it isn't checked. Do something else
-                    len -=1 ;
-                    var prog = document.getElementById("array_bar") ;
-                    var ac = document.getElementById("array_count") ;
-                    ac.innerText = "("+ len+"/"+check_box.length+")" ;
-                    prog.setAttribute("value",len);
-                    prog.setAttribute("max",check_box.length);
-                }   
-          });
-        } ;
+                    var pop = this.parentElement.parentElement.parentElement.parentElement.parentElement.id;
+                    cont = document.getElementById(pop);
+                    len_checkbox = cont.querySelectorAll('input[type ="checkbox"]');
+					len = cont.querySelectorAll('input[type ="checkbox"]:checked');
+					var prog = document.getElementById(pop.slice(0,-3) + 'bar') ;
+					var ac = document.getElementById(pop.slice(0,-3) + 'count') ;
+					ac.innerText = "("+ len.length+"/"+len_checkbox.length+")" ;
+		 			prog.setAttribute("value",len.length);
+					prog.setAttribute("max",len_checkbox.length); 
+                }})};
+       
+
+
+
+
+        // var panel_div = document.querySelectorAll('.panel');
+        // for (i = 0; i < panel_div.length; i++) {
+        // if  (panel_div[i].id == ''){ alert('emppty'); 
+        //                             break;};
+        // var cont = document.querySelector('#'+panel_div[i].id);
+        // var cont_checkbox = cont.querySelectorAll('input[type ="checkbox"]');
+        // var len = 0 ;
+        // for (j = 0; j < cont_checkbox.length; j++) {
+        //     cont_checkbox[j].addEventListener("click",function(){
+        //         if(this.checked){
+        //             // it is checked. Do something
+        //             len +=1 ;
+        //             alert(panel_div[i].id.slice(0,-3) + 'bar');
+        //             var pop = cont_checkbox[j].parentElement.parentElement.parentElement.parentElement.parentElement.id;
+        //             alert(pop);
+        //             var prog = document.getElementById(pop.slice(0,-3) + 'bar') ;
+        //             var ac = document.getElementById(pop.slice(0,-3) + 'count') ;
+        //             ac.innerText = "("+ len+"/"+cont_checkbox.length+")" ;
+        //             // prog.setAttribute("value",len);
+        //             // prog.setAttribute("max",cont_checkbox.length); 
+        //             alert('poi');
+        //         }
+        //         else{
+        //             // it isn't checked. Do something else
+        //             len -=1 ;
+        //             var prog = document.getElementById(panel_div[i].id.slice(0,-3) + 'bar') ;
+        //             var ac = document.getElementById(panel_div[i].id.slice(0,-3) + 'count') ;
+        //             ac.innerText = "("+ len+"/"+cont_checkbox.length+")" ;
+        //             prog.setAttribute("value",len);
+        //             prog.setAttribute("max",cont_checkbox.length);}
+        //         })
+        //     };
+        // };
+            
+            // var cont_checkbox = cont.querySelectorAll('input[type ="checkbox"]');
+            // var len = 0
+            // for (j = 0; j < cont_checkbox.length; j++) {
+            //     cont_checkbox[j].addEventListener("click",function(){
+            //     if(this.checked){
+            //         // it is checked. Do something
+            //         len +=1 ;
+            //         var prog = document.getElementById(panel_div[i].id.slice(0,-3) + 'bar') ;
+            //         var ac = document.getElementById(panel_div[i].id.slice(0,-3) + 'count') ;
+            //         // alert(cont_checkbox);
+            //         // alert(ac);
+            //         // alert(panel_div[i].id.slice(0,-3) + 'count');
+            //         ac.innerText = "("+ len+"/"+cont_checkbox.length+")" ;
+            //         prog.setAttribute("value",len);
+            //         prog.setAttribute("max",cont_checkbox.length); 
+            //     }
+            //     else{
+            //         // it isn't checked. Do something else
+            //         len -=1 ;
+            //         var prog = document.getElementById(panel_div[i].id.slice(0,-3) + 'bar') ;
+            //         var ac = document.getElementById(panel_div[i].id.slice(0,-3) + 'count') ;
+            //         ac.innerText = "("+ len+"/"+cont_checkbox.length+")" ;
+            //         prog.setAttribute("value",len);
+            //         prog.setAttribute("max",cont_checkbox.length);
+            //     } })};
+
+
+        // var matrix_check_box = document.getElementsByClassName("matrix_checkbox");
+        // var matrix_len = 0 ;
+        // for (i = 0; i < matrix_check_box.length; i++) {
+        //     matrix_check_box[i].addEventListener("click", function() {
+        //         if(this.checked){
+        //             // it is checked. Do something
+        //             matrix_len +=1 ;
+        //             var matrix_prog = document.getElementById("matrix_bar") ;
+        //             var matrix_ac = document.getElementById("matrix_count") ;
+        //             matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
+        //             matrix_prog.setAttribute("value",matrix_len);
+        //             matrix_prog.setAttribute("max",matrix_check_box.length);
+        //         }else{
+        //             // it isn't checked. Do something else
+        //             matrix_len -=1 ;
+        //             var matrix_prog = document.getElementById("matrix_bar") ;
+        //             var matrix_ac = document.getElementById("matrix_count") ;
+        //             matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
+        //             matrix_prog.setAttribute("value",matrix_len);
+        //             matrix_prog.setAttribute("max",matrix_check_box.length);
+        //         }})} ;
+
+        // var check_box = document.getElementsByClassName("array_checkbox");
+        // var len = 0 ;
+        // for (i = 0; i < check_box.length; i++) {
+        //     check_box[i].addEventListener("click", function() {
+        //         if(this.checked){
+        //             // it is checked. Do something
+        //             len +=1 ;
+        //             var prog = document.getElementById("array_bar") ;
+        //             var ac = document.getElementById("array_count") ;
+        //             ac.innerText = "("+ len+"/"+check_box.length+")" ;
+        //             prog.setAttribute("value",len);
+        //             prog.setAttribute("max",check_box.length);
+                    
+        //         }
+        //         else{
+        //             // it isn't checked. Do something else
+        //             len -=1 ;
+        //             var prog = document.getElementById("array_bar") ;
+        //             var ac = document.getElementById("array_count") ;
+        //             ac.innerText = "("+ len+"/"+check_box.length+")" ;
+        //             prog.setAttribute("value",len);
+        //             prog.setAttribute("max",check_box.length);
+        //         }   
+        //   });
+        // } ;
+
+        
+        
+
+
+
 
         document.addEventListener("DOMContentLoaded", () => {
-                    var prog = document.getElementById("array_bar") ;
-                    var ac = document.getElementById("array_count") ;
-                    ac.innerText = "("+ len+"/"+check_box.length+")" ;
-                    prog.setAttribute("value",len);
 
-                    var matrix_prog = document.getElementById("matrix_bar") ;
-                    var matrix_ac = document.getElementById("matrix_count") ;
-                    matrix_ac.innerText = "("+ matrix_len+"/"+matrix_check_box.length+")" ;
-                    matrix_prog.setAttribute("value",matrix_len);
-                    
+            
         });
         
         
