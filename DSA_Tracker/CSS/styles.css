@@ -84,10 +84,33 @@ grid-template-columns: 50% 50% ;  /* it specify the size of each column */
 .grid-item{
     display: inline-block;
 }
+/* Practice Table Design */
+.panel table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.panel table td, .panel table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-table, th ,td{
-    border: 1px solid black;
-    padding: 1em;
+.panel table tr:nth-child(even){background-color: #f2f2f2;}
+
+.panel table tr:hover {background-color: #ddd;}
+
+.panel table th {
+  
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: steelblue;
+  color: white;
+}
+.panel table a{
+  text-decoration: none;
+  color: black;
+  
 }
 
 
@@ -95,9 +118,9 @@ table, th ,td{
     background-color:rgba(0, 0, 0, 0.888);
     color: white;
     cursor: pointer;
-    padding: 10px;
+    
     width: 100%;
-    border: 1px solid white;
+    border: 1px solid darkslategrey;
     text-align: left;
     outline: none;
     font-size: 15px;
@@ -121,7 +144,7 @@ progress{
     color: black;
     font-size: large;
   }
-  .active, .accordion:hover p{
+  .active p, .accordion:hover p{
     color: black;
   }
   .active, .accordion:hover progress{
@@ -129,7 +152,7 @@ progress{
   }
   
   .panel {
-    padding: 0 18px;
+    
     display: none;
     background-color: white;
     overflow: hidden;

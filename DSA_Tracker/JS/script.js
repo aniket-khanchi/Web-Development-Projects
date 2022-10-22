@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    var cont = document.querySelector('.prac');
+    list_cont = cont.querySelectorAll('.panel')
+    for (i = 0; i < list_cont.length; i++){ //console.log(list_cont[i].id);
+        var div = document.querySelector('#' + list_cont[i].id);
+        var cont_checkbox = div.querySelectorAll('input[type ="checkbox"]');
+        //console.log(list_cont[i].id,cont_checkbox.length)
+        var cont_checked = div.querySelectorAll('input[type ="checkbox"]:checked');
+        var prog = document.getElementById(list_cont[i].id.slice(0,-3) + 'bar') ;
+        var ac = document.getElementById(list_cont[i].id.slice(0,-3) + 'count') ;
+        ac.innerText = "("+ cont_checked.length+"/"+cont_checkbox.length+")" ;
+        prog.setAttribute("value",cont_checked.length);
+        prog.setAttribute("max",cont_checkbox.length); 
 
+       }; 
             
 });
 
